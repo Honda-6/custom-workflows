@@ -14,5 +14,34 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+     <dependency>
+      <groupId>org.jbpm.jbpm3</groupId>
+      <artifactId>jbpm-jpdl</artifactId>
+      <version>3.3.1.OKM</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>bsh</groupId>
+          <artifactId>bsh</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.jackrabbit</groupId>
+          <artifactId>jackrabbit-core</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.jbpm.jbpm3</groupId>
+      <artifactId>jbpm-identity</artifactId>
+      <version>3.3.1.OKM</version>
+    </dependency>
+    <dependency>
+      <groupId>com.openkm</groupId>
+      <artifactId>openkm</artifactId>
+      <version>6.3.13-DEV</version>
+    </dependency>
   </dependencies>
 </project>
