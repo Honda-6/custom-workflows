@@ -18,7 +18,7 @@ public class DeleteDocumentActionHandler implements ActionHandler {
 				Document doc = OKMDocument.getInstance().getProperties(null, uuid);
 				OKMDocument.getInstance().purge(null, doc.getPath());
 			} else {
-				throw new RuntimeException("Missing 'document' and 'uuid' workflow variables.");
+				throw new RuntimeException("Missing 'uuid'.");
 			}
 		} catch (PathNotFoundException e) {
 			throw new RuntimeException("File not found!", e);

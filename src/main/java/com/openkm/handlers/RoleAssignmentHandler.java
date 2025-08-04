@@ -9,17 +9,16 @@ import org.jbpm.taskmgmt.exe.Assignable;
 import com.openkm.module.db.DbAuthModule;
 
 public class RoleAssignmentHandler implements AssignmentHandler {
-	private static final long serialVersionUID = 1L;
 
 	@Override
 	public void assign(Assignable assignable, ExecutionContext executionContext) throws Exception {
 		DbAuthModule authModule = new DbAuthModule();
 
-		// Get all users assigned to the ROLE_ADMIN
+		// Get all users with admin privileges
 		Collection<String> adminUsers = authModule.getUsersByRole(null,"ROLE_ADMIN");
 
 		if (adminUsers == null || adminUsers.isEmpty()) {
-			throw new Exception("No users found in ROLE_ADMIN");
+			throw new Exception("No users with admin privileges found for role assignment.");
 		}
 
 		// Assign all as pooled actors
